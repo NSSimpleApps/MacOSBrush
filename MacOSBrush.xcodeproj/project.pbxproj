@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5819DCE1B31B41B0031D4BB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5819DCD1B31B41B0031D4BB /* MainViewController.m */; };
 		B5F90AA31B3168B7008976E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F90AA21B3168B7008976E8 /* AppDelegate.m */; };
 		B5F90AA51B3168B7008976E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F90AA41B3168B7008976E8 /* main.m */; };
 		B5F90AA71B3168B7008976E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F90AA61B3168B7008976E8 /* Images.xcassets */; };
@@ -25,6 +26,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B5819DCC1B31B41B0031D4BB /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		B5819DCD1B31B41B0031D4BB /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		B5F90A9C1B3168B7008976E8 /* MacOSBrush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacOSBrush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F90AA01B3168B7008976E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5F90AA11B3168B7008976E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -81,6 +84,8 @@
 				B5F90AA61B3168B7008976E8 /* Images.xcassets */,
 				B5F90AA81B3168B7008976E8 /* MainMenu.xib */,
 				B5F90A9F1B3168B7008976E8 /* Supporting Files */,
+				B5819DCC1B31B41B0031D4BB /* MainViewController.h */,
+				B5819DCD1B31B41B0031D4BB /* MainViewController.m */,
 			);
 			path = MacOSBrush;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5F90AA51B3168B7008976E8 /* main.m in Sources */,
+				B5819DCE1B31B41B0031D4BB /* MainViewController.m in Sources */,
 				B5F90AA31B3168B7008976E8 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +407,7 @@
 				B5F90ABB1B3168B7008976E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B5F90ABC1B3168B7008976E8 /* Build configuration list for PBXNativeTarget "MacOSBrushTests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +416,7 @@
 				B5F90ABE1B3168B7008976E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

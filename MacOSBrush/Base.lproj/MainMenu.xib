@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6233" systemVersion="14A329f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6233"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -11,11 +11,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="">
-            <connections>
-                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
-            </connections>
-        </customObject>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
@@ -666,15 +662,248 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="MacOSBrush" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="rvt-3D-wGD">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
-            <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+            <rect key="contentRect" x="152" y="158" width="480" height="270"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1600" height="877"/>
+            <view key="contentView" id="UBZ-VW-EH9">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x41-gy-KUu">
+                        <rect key="frame" x="232" y="204" width="248" height="66"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="248" id="bq6-qd-alu"/>
+                            <constraint firstAttribute="height" constant="66" id="m2X-Ie-Zu3"/>
+                        </constraints>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        <size key="cellSize" width="32" height="32"/>
+                        <size key="intercellSpacing" width="4" height="2"/>
+                        <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="XQU-rG-4sH">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <cells>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="brush" imagePosition="only" alignment="left" state="on" borderStyle="border" tag="1" inset="2" id="tib-Tl-dXy">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="setBrushMode:" target="Sox-2g-QVw" id="e7Z-gC-EHE"/>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="eraser" imagePosition="only" alignment="left" borderStyle="border" inset="2" id="hw6-FA-gya">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="setEraserMode:" target="Sox-2g-QVw" id="ibp-zB-IpY"/>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="selection" imagePosition="only" alignment="left" borderStyle="border" inset="2" id="JtN-6O-fWJ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="setSelectionMode:" target="Sox-2g-QVw" id="fe3-Al-Ibt"/>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="airbrush" imagePosition="only" alignment="left" borderStyle="border" inset="2" id="9oY-4M-4cH">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="setAirbrushMode:" target="Sox-2g-QVw" id="pSf-EB-3sI"/>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="fill" imagePosition="only" alignment="left" borderStyle="border" inset="2" id="QcY-uJ-j0L">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="setFillMode:" target="Sox-2g-QVw" id="5ob-nx-u0d"/>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="bomb" imagePosition="only" alignment="left" borderStyle="border" inset="2" id="FkG-VX-2p8">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="setBombMode:" target="Sox-2g-QVw" id="9Cv-HR-eBe"/>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="line" imagePosition="only" alignment="left" borderStyle="border" inset="2" id="YWC-Vs-spx">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="setLineMode:" target="Sox-2g-QVw" id="ZgV-sa-E2m"/>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="curve" imagePosition="only" alignment="left" borderStyle="border" inset="2" id="tfc-yz-dN9">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="setCurveMode:" target="Sox-2g-QVw" id="MFv-r8-6gn"/>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="rectangle" imagePosition="only" alignment="left" borderStyle="border" inset="2" id="3LC-H5-L0j">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="setRectangleMode:" target="Sox-2g-QVw" id="AYj-x8-dZU"/>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="ellipse" imagePosition="only" alignment="left" borderStyle="border" inset="2" id="ML9-f0-n2R">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="setEllipseMode:" target="Sox-2g-QVw" id="GEX-wY-RK8"/>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="rounded_rectangle" imagePosition="only" alignment="left" borderStyle="border" inset="2" id="L3A-Gb-yW0">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="setRoundedRectangleMode:" target="Sox-2g-QVw" id="GXe-5a-NWz"/>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="text" imagePosition="only" alignment="left" borderStyle="border" inset="2" id="6he-4c-svL">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="setTextMode:" target="Sox-2g-QVw" id="apu-4p-taz"/>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="eyedropper" imagePosition="only" alignment="left" borderStyle="border" inset="2" id="9pQ-BY-lIu">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="setEyedropperMode:" target="Sox-2g-QVw" id="swY-qH-ufH"/>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="zoom" imagePosition="only" alignment="left" borderStyle="border" inset="2" id="ZfJ-5D-VKV">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="setZoomMode:" target="Sox-2g-QVw" id="bRz-ik-KvQ"/>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                        </cells>
+                    </matrix>
+                    <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6C7-H7-bC7">
+                        <rect key="frame" x="130" y="202" width="96" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="92" id="NYE-zG-ww2"/>
+                        </constraints>
+                        <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="10" doubleValue="3" tickMarkPosition="above" numberOfTickMarks="10" allowsTickMarkValuesOnly="YES" sliderType="linear" id="TVV-fi-KtF"/>
+                    </slider>
+                    <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="Fr4-ab-f52">
+                        <rect key="frame" x="0.0" y="212" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="RX4-dl-54P"/>
+                            <constraint firstAttribute="width" constant="50" id="fMm-wI-IxD"/>
+                        </constraints>
+                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </colorWell>
+                    <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="xYW-Ey-NNj">
+                        <rect key="frame" x="74" y="212" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="Ddc-LL-rjV"/>
+                            <constraint firstAttribute="width" constant="50" id="dxI-21-qkt"/>
+                        </constraints>
+                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </colorWell>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="GLj-96-tgc">
+                        <rect key="frame" x="52" y="227" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="59s-mb-oGH"/>
+                            <constraint firstAttribute="width" constant="20" id="nRo-Sy-9z4"/>
+                        </constraints>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="exchange_arrows" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wih-bP-qID">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzc-18-7OH">
+                        <rect key="frame" x="0.0" y="-1" width="480" height="197"/>
+                        <clipView key="contentView" misplaced="YES" id="kTz-kQ-5gC">
+                            <rect key="frame" x="1" y="1" width="166" height="79"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Yg-jq-8GH">
+                                    <rect key="frame" x="0.0" y="0.0" width="166" height="79"/>
+                                </view>
+                            </subviews>
+                        </clipView>
+                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="A3v-dj-gNa">
+                            <rect key="frame" x="1" y="80" width="166" height="15"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="rbf-Gm-lCx">
+                            <rect key="frame" x="167" y="1" width="15" height="79"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y5W-mG-5eo">
+                        <rect key="frame" x="130" y="253" width="67" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="63" id="T0x-nq-tJY"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="line width:" id="ouX-AK-yRm">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="x41-gy-KUu" firstAttribute="top" secondItem="UBZ-VW-EH9" secondAttribute="top" id="079-xj-EMU"/>
+                    <constraint firstItem="x41-gy-KUu" firstAttribute="leading" secondItem="6C7-H7-bC7" secondAttribute="trailing" constant="8" id="40U-Tv-V4Y"/>
+                    <constraint firstAttribute="trailing" secondItem="x41-gy-KUu" secondAttribute="trailing" id="4Tw-2i-WtD"/>
+                    <constraint firstItem="6C7-H7-bC7" firstAttribute="top" secondItem="y5W-mG-5eo" secondAttribute="bottom" constant="25" id="AFj-mR-biH"/>
+                    <constraint firstItem="xYW-Ey-NNj" firstAttribute="leading" secondItem="GLj-96-tgc" secondAttribute="trailing" constant="2" id="Ei3-Iq-4dU"/>
+                    <constraint firstItem="GLj-96-tgc" firstAttribute="centerY" secondItem="Fr4-ab-f52" secondAttribute="centerY" id="GXB-5S-nK9"/>
+                    <constraint firstItem="y5W-mG-5eo" firstAttribute="leading" secondItem="xYW-Ey-NNj" secondAttribute="trailing" constant="8" id="Kgn-a6-eUe"/>
+                    <constraint firstItem="Fr4-ab-f52" firstAttribute="leading" secondItem="UBZ-VW-EH9" secondAttribute="leading" id="NGd-wD-Bf7"/>
+                    <constraint firstItem="6C7-H7-bC7" firstAttribute="leading" secondItem="xYW-Ey-NNj" secondAttribute="trailing" constant="8" id="Prz-Ex-Qen"/>
+                    <constraint firstItem="Fr4-ab-f52" firstAttribute="top" secondItem="UBZ-VW-EH9" secondAttribute="top" constant="8" id="T9q-78-lEF"/>
+                    <constraint firstItem="GLj-96-tgc" firstAttribute="leading" secondItem="Fr4-ab-f52" secondAttribute="trailing" constant="2" id="Vss-Nl-HhF"/>
+                    <constraint firstItem="y5W-mG-5eo" firstAttribute="top" secondItem="UBZ-VW-EH9" secondAttribute="top" id="aEx-Pp-mq3"/>
+                    <constraint firstItem="xYW-Ey-NNj" firstAttribute="top" secondItem="UBZ-VW-EH9" secondAttribute="top" constant="8" id="pP6-hZ-O17"/>
+                </constraints>
             </view>
+            <point key="canvasLocation" x="282" y="689"/>
         </window>
+        <customObject id="Sox-2g-QVw" customClass="MainViewController">
+            <connections>
+                <outlet property="view" destination="UBZ-VW-EH9" id="K26-0r-75r"/>
+            </connections>
+        </customObject>
     </objects>
+    <resources>
+        <image name="airbrush" width="32" height="32"/>
+        <image name="bomb" width="32" height="32"/>
+        <image name="brush" width="32" height="32"/>
+        <image name="curve" width="32" height="32"/>
+        <image name="ellipse" width="32" height="32"/>
+        <image name="eraser" width="32" height="32"/>
+        <image name="exchange_arrows" width="25" height="25"/>
+        <image name="eyedropper" width="32" height="32"/>
+        <image name="fill" width="32" height="32"/>
+        <image name="line" width="32" height="32"/>
+        <image name="rectangle" width="32" height="32"/>
+        <image name="rounded_rectangle" width="32" height="32"/>
+        <image name="selection" width="32" height="32"/>
+        <image name="text" width="32" height="32"/>
+        <image name="zoom" width="32" height="32"/>
+    </resources>
 </document>

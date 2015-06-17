@@ -1,5 +1,5 @@
 //
-//  main.m
+//  MainViewController.h
 //  MacOSBrush
 //
 //  Created by NSSimpleApps on 17.06.15.
@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-int main(int argc, const char * argv[]) {
-    return NSApplicationMain(argc, argv);
-}
+@interface MainViewController : NSViewController
+
+@end
