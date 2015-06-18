@@ -833,14 +833,14 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
-                    <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzc-18-7OH">
+                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzc-18-7OH">
                         <rect key="frame" x="0.0" y="-1" width="480" height="197"/>
-                        <clipView key="contentView" misplaced="YES" id="kTz-kQ-5gC">
+                        <clipView key="contentView" id="kTz-kQ-5gC">
                             <rect key="frame" x="1" y="1" width="166" height="79"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Yg-jq-8GH">
-                                    <rect key="frame" x="0.0" y="0.0" width="166" height="79"/>
+                                <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Yg-jq-8GH" customClass="NSImageView">
+                                    <rect key="frame" x="0.0" y="75" width="188" height="139"/>
                                 </view>
                             </subviews>
                         </clipView>
@@ -874,17 +874,22 @@
                     <constraint firstItem="GLj-96-tgc" firstAttribute="centerY" secondItem="Fr4-ab-f52" secondAttribute="centerY" id="GXB-5S-nK9"/>
                     <constraint firstItem="y5W-mG-5eo" firstAttribute="leading" secondItem="xYW-Ey-NNj" secondAttribute="trailing" constant="8" id="Kgn-a6-eUe"/>
                     <constraint firstItem="Fr4-ab-f52" firstAttribute="leading" secondItem="UBZ-VW-EH9" secondAttribute="leading" id="NGd-wD-Bf7"/>
+                    <constraint firstAttribute="bottom" secondItem="bzc-18-7OH" secondAttribute="bottom" constant="-1" id="Ouj-EB-MEm"/>
+                    <constraint firstItem="bzc-18-7OH" firstAttribute="leading" secondItem="UBZ-VW-EH9" secondAttribute="leading" id="PdW-IA-z3r"/>
                     <constraint firstItem="6C7-H7-bC7" firstAttribute="leading" secondItem="xYW-Ey-NNj" secondAttribute="trailing" constant="8" id="Prz-Ex-Qen"/>
                     <constraint firstItem="Fr4-ab-f52" firstAttribute="top" secondItem="UBZ-VW-EH9" secondAttribute="top" constant="8" id="T9q-78-lEF"/>
                     <constraint firstItem="GLj-96-tgc" firstAttribute="leading" secondItem="Fr4-ab-f52" secondAttribute="trailing" constant="2" id="Vss-Nl-HhF"/>
                     <constraint firstItem="y5W-mG-5eo" firstAttribute="top" secondItem="UBZ-VW-EH9" secondAttribute="top" id="aEx-Pp-mq3"/>
+                    <constraint firstItem="bzc-18-7OH" firstAttribute="top" secondItem="UBZ-VW-EH9" secondAttribute="top" constant="74" id="imb-nN-CE7"/>
                     <constraint firstItem="xYW-Ey-NNj" firstAttribute="top" secondItem="UBZ-VW-EH9" secondAttribute="top" constant="8" id="pP6-hZ-O17"/>
+                    <constraint firstAttribute="trailing" secondItem="bzc-18-7OH" secondAttribute="trailing" id="yj7-Ma-jUc"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="282" y="689"/>
+            <point key="canvasLocation" x="310" y="307"/>
         </window>
         <customObject id="Sox-2g-QVw" customClass="MainViewController">
             <connections>
+                <outlet property="paintScrollView" destination="bzc-18-7OH" id="fc2-dB-TAz"/>
                 <outlet property="view" destination="UBZ-VW-EH9" id="K26-0r-75r"/>
             </connections>
         </customObject>

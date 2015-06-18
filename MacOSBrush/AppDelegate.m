@@ -12,8 +12,6 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
-    //self.windowController = [[MainWindowController alloc] initWithWindowNibName:@"MainWindowController"];
-    //[self.windowController showWindow:self];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

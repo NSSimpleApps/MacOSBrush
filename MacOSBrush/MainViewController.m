@@ -10,6 +10,8 @@
 
 @interface MainViewController ()
 
+@property (weak) IBOutlet NSScrollView *paintScrollView;
+
 @end
 
 @implementation MainViewController
@@ -18,17 +20,69 @@
     
     [super viewDidLoad];
     
-    NSView *v = [[NSView alloc] initWithFrame:CGRectMake(50, 50, 100, 100)];
-    v.wantsLayer = YES;
-    v.layer.backgroundColor = [NSColor greenColor].CGColor;
-    [self.view addSubview:v];
+    NSRect frameRect = NSMakeRect(0, 0, 640, 480);//self.paintScrollView.contentView.frame;
+    NSImage *image = [[NSImage alloc] initWithSize:frameRect.size];
+    
+    [image lockFocus];
+    [[NSColor whiteColor] setFill];
+    NSRectFill(frameRect);
+    [image unlockFocus];
+    
+    NSRect imageRect = NSMakeRect(0, 0, image.size.width, image.size.height);
+    
+    NSImageView *imageView = [[NSImageView alloc] initWithFrame:imageRect];
+    imageView.bounds = imageRect;
+    imageView.image = image;
+    
+    self.paintScrollView.documentView = imageView;
+    
+    self.paintScrollView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    NSView *documentSuperview = [self.paintScrollView.documentView superview];
+    [(NSView*)self.paintScrollView.documentView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [documentSuperview addConstraint:[NSLayoutConstraint constraintWithItem:documentSuperview
+                                                                  attribute:NSLayoutAttributeCenterX
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:self.paintScrollView.documentView
+                                                                  attribute:NSLayoutAttributeCenterX
+                                                                 multiplier:1
+                                                                   constant:0]];
+    
+    [documentSuperview addConstraint:[NSLayoutConstraint constraintWithItem:documentSuperview
+                                                                  attribute:NSLayoutAttributeCenterY
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:self.paintScrollView.documentView
+                                                                  attribute:NSLayoutAttributeCenterY
+                                                                 multiplier:1
+                                                                   constant:0]];
+    
+    NSImageView *documentView = (NSImageView*)self.paintScrollView.documentView;
+    
+    [documentSuperview addConstraint:[NSLayoutConstraint constraintWithItem:documentView
+                                                                  attribute:NSLayoutAttributeWidth
+                                                                  relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                                                     toItem:self.paintScrollView.contentView
+                                                                  attribute:NSLayoutAttributeWidth
+                                                                 multiplier:1
+                                                                   constant:0]];
+    
+    [documentSuperview addConstraint:[NSLayoutConstraint constraintWithItem:documentView
+                                                                  attribute:NSLayoutAttributeHeight
+                                                                  relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                                                     toItem:self.paintScrollView.contentView
+                                                                  attribute:NSLayoutAttributeHeight
+                                                                 multiplier:1
+                                                                   constant:0]];
+
+    
+    
 }
 
 - (IBAction)setBrushMode:(NSMatrix *)sender {
     
-    NSCursor *c = [[NSCursor alloc] initWithImage:[NSImage imageNamed:@"brush"] hotSpot:NSMakePoint(5, 5)];
+    //NSCursor *c = [[NSCursor alloc] initWithImage:[NSImage imageNamed:@"brush"] hotSpot:NSMakePoint(5, 5)];
     
-    [c push];
+    //[[self.view enclosingScrollView] setDocumentCursor:c];
 }
 - (IBAction)setSelectionMode:(NSMatrix *)sender {
 }
@@ -55,13 +109,6 @@
 - (IBAction)setTextMode:(NSMatrix *)sender {
 }
 - (IBAction)setZoomMode:(NSMatrix *)sender {
-}
-
-- (void)mouseDown:(NSEvent *)theEvent {
-    
-    NSLog(@"%s", __func__);
-    
-    [[NSCursor currentCursor] pop];
 }
 
 @end
