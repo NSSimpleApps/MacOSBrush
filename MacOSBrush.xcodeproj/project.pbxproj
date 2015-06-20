@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B5819DCE1B31B41B0031D4BB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5819DCD1B31B41B0031D4BB /* MainViewController.m */; };
+		B5D944FD1B35642A00605BD9 /* PaintView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D944FC1B35642A00605BD9 /* PaintView.m */; };
+		B5D945001B35A3A600605BD9 /* screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D944FF1B35A3A600605BD9 /* screenshot.png */; };
 		B5F90AA31B3168B7008976E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F90AA21B3168B7008976E8 /* AppDelegate.m */; };
 		B5F90AA51B3168B7008976E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F90AA41B3168B7008976E8 /* main.m */; };
 		B5F90AA71B3168B7008976E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F90AA61B3168B7008976E8 /* Images.xcassets */; };
@@ -28,6 +30,10 @@
 /* Begin PBXFileReference section */
 		B5819DCC1B31B41B0031D4BB /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		B5819DCD1B31B41B0031D4BB /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		B5D944FB1B35642A00605BD9 /* PaintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaintView.h; sourceTree = "<group>"; };
+		B5D944FC1B35642A00605BD9 /* PaintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaintView.m; sourceTree = "<group>"; };
+		B5D944FE1B35681600605BD9 /* PaintProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaintProtocol.h; sourceTree = "<group>"; };
+		B5D944FF1B35A3A600605BD9 /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
 		B5F90A9C1B3168B7008976E8 /* MacOSBrush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacOSBrush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F90AA01B3168B7008976E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5F90AA11B3168B7008976E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -83,9 +89,13 @@
 				B5F90AA21B3168B7008976E8 /* AppDelegate.m */,
 				B5F90AA61B3168B7008976E8 /* Images.xcassets */,
 				B5F90AA81B3168B7008976E8 /* MainMenu.xib */,
-				B5F90A9F1B3168B7008976E8 /* Supporting Files */,
 				B5819DCC1B31B41B0031D4BB /* MainViewController.h */,
 				B5819DCD1B31B41B0031D4BB /* MainViewController.m */,
+				B5D944FB1B35642A00605BD9 /* PaintView.h */,
+				B5D944FC1B35642A00605BD9 /* PaintView.m */,
+				B5D944FE1B35681600605BD9 /* PaintProtocol.h */,
+				B5D944FF1B35A3A600605BD9 /* screenshot.png */,
+				B5F90A9F1B3168B7008976E8 /* Supporting Files */,
 			);
 			path = MacOSBrush;
 			sourceTree = "<group>";
@@ -197,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5F90AA71B3168B7008976E8 /* Images.xcassets in Resources */,
+				B5D945001B35A3A600605BD9 /* screenshot.png in Resources */,
 				B5F90AAA1B3168B7008976E8 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5F90AA51B3168B7008976E8 /* main.m in Sources */,
+				B5D944FD1B35642A00605BD9 /* PaintView.m in Sources */,
 				B5819DCE1B31B41B0031D4BB /* MainViewController.m in Sources */,
 				B5F90AA31B3168B7008976E8 /* AppDelegate.m in Sources */,
 			);

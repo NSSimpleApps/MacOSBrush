@@ -833,13 +833,13 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
-                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzc-18-7OH">
+                    <scrollView borderType="line" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzc-18-7OH">
                         <rect key="frame" x="0.0" y="-1" width="480" height="197"/>
                         <clipView key="contentView" id="kTz-kQ-5gC">
                             <rect key="frame" x="1" y="1" width="166" height="79"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Yg-jq-8GH" customClass="NSImageView">
+                                <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Yg-jq-8GH" customClass="PaintView">
                                     <rect key="frame" x="0.0" y="75" width="188" height="139"/>
                                 </view>
                             </subviews>
