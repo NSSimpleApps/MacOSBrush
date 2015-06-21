@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class NSImageView;
+
 @protocol PaintProtocol <NSObject>
 
 @optional
 
-- (void)drawingDidBeginAtPoint:(NSPoint)point inView:(PaintView*)paintView;
+- (void)drawingDidBeginAtPoint:(NSPoint)point inView:(NSImageView*)paintView;
 
-- (void)drawingMovedToPoint:(NSPoint)point inView:(PaintView*)paintView;
+- (void)drawingMovedToPoint:(NSPoint)point inView:(NSImageView*)paintView;
 
-- (void)drawingDidEndAtPoint:(NSPoint)point inView:(PaintView*)paintView;
+- (void)drawingDidEndAtPoint:(NSPoint)point inView:(NSImageView*)paintView;
 
 @end

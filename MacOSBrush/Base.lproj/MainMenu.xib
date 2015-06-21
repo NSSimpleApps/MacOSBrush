@@ -804,7 +804,7 @@
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="92" id="NYE-zG-ww2"/>
                         </constraints>
-                        <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="10" doubleValue="3" tickMarkPosition="above" numberOfTickMarks="10" allowsTickMarkValuesOnly="YES" sliderType="linear" id="TVV-fi-KtF"/>
+                        <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="10" doubleValue="2" tickMarkPosition="above" numberOfTickMarks="10" allowsTickMarkValuesOnly="YES" sliderType="linear" id="TVV-fi-KtF"/>
                         <connections>
                             <binding destination="Sox-2g-QVw" name="value" keyPath="self.lineWidth" id="rej-OS-4Y6"/>
                         </connections>

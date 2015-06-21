@@ -8,15 +8,15 @@
 
 #import "MainViewController.h"
 #import "PaintView.h"
-#import "PaintProtocol.h"
+#import "BrushTool.h"
+#import "EraserTool.h"
 
-@interface MainViewController () <PaintProtocol>
+@interface MainViewController ()
 
 @property (weak) IBOutlet NSScrollView *paintScrollView;
 
-@property (assign, nonatomic) NSPoint p0;
-
-@property (strong, nonatomic) NSBezierPath *bezierPath;
+@property (strong, nonatomic) BrushTool *brushTool;
+@property (strong, nonatomic) EraserTool *eraserTool;
 
 @end
 
@@ -26,7 +26,9 @@
     
     [super viewDidLoad];
     
-    NSRect frameRect = NSMakeRect(0, 0, 640, 480);//self.paintScrollView.contentView.frame;
+    self.lineWidth = 2;
+    
+    NSRect frameRect = NSMakeRect(0, 0, 640, 480);
     NSImage *image = [[NSImage alloc] initWithSize:frameRect.size];
     
     [image lockFocus];
@@ -39,7 +41,6 @@
     PaintView *paintView = [[PaintView alloc] initWithFrame:imageRect];
     //paintView.bounds = imageRect;
     paintView.image = image;
-    paintView.delegate = self;
     
     self.paintScrollView.documentView = paintView;
     self.paintScrollView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -81,50 +82,40 @@
                                                           constant:0]];
 }
 
-#pragma - mark PaintProtocol
-
-- (void)drawingDidBeginAtPoint:(NSPoint)point inView:(PaintView *)paintView {
+- (void)setLineWidth:(NSInteger)lineWidth {
     
-    self.p0 = point;
+    _lineWidth = lineWidth;
     
-    self.bezierPath = [NSBezierPath bezierPath];
-    self.bezierPath.lineWidth = self.lineWidth;
+    self.brushTool.lineWidth = lineWidth;
+    self.brushTool.lineColor = [NSColor blackColor];
+    
+    self.eraserTool.lineWidth = lineWidth;
 }
 
-- (void)drawingMovedToPoint:(NSPoint)point inView:(PaintView *)paintView {
+- (BrushTool *)brushTool {
     
-    [paintView.image lockFocus];
-    
-    [[NSGraphicsContext currentContext] setShouldAntialias:NO];
-    [NSGraphicsContext saveGraphicsState];
-    [[NSGraphicsContext currentContext] setCompositingOperation:NSCompositeCopy];
-    
-    [[NSColor blackColor] setStroke];
-    
-    [self.bezierPath moveToPoint:self.p0];
-    [self.bezierPath lineToPoint:point];
-    [self.bezierPath stroke];
-    
-    [NSGraphicsContext restoreGraphicsState];
-     
-    self.p0 = point;
-    
-    [paintView setNeedsDisplay];
-    
-    [paintView.image unlockFocus];
+    if (_brushTool == nil) {
+        
+        _brushTool = [BrushTool new];
+    }
+    return _brushTool;
 }
 
-- (void)drawingDidEndAtPoint:(NSPoint)point inView:(PaintView *)paintView {
+- (EraserTool *)eraserTool {
     
-    [self.bezierPath closePath];
-    self.bezierPath = nil;
+    if (_eraserTool == nil) {
+        
+        _eraserTool = [EraserTool new];
+    }
+    return _eraserTool;
 }
 
 - (IBAction)setBrushMode:(NSMatrix *)sender {
     
-    NSCursor *brushCursor = [[NSCursor alloc] initWithImage:[NSImage imageNamed:@"brush-cursor"] hotSpot:NSZeroPoint];
+    [self.paintScrollView setDocumentCursor:self.brushTool.cursor];
     
-    [self.paintScrollView setDocumentCursor:brushCursor];
+    PaintView *paintView = self.paintScrollView.contentView.documentView;
+    paintView.delegate = self.brushTool;
 }
 
 - (IBAction)setSelectionMode:(NSMatrix *)sender {
@@ -163,9 +154,10 @@
 
 - (IBAction)setEraserMode:(NSMatrix *)sender {
     
-    NSCursor *eraserCursor = [[NSCursor alloc] initWithImage:[NSImage imageNamed:@"eraser-cursor"] hotSpot:NSZeroPoint];
+    [self.paintScrollView setDocumentCursor:self.eraserTool.cursor];
     
-    [self.paintScrollView setDocumentCursor:eraserCursor];
+    PaintView *paintView = self.paintScrollView.contentView.documentView;
+    paintView.delegate = self.eraserTool;
 }
 
 - (IBAction)setAirbrushMode:(NSMatrix *)sender {

@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		B5819DCE1B31B41B0031D4BB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5819DCD1B31B41B0031D4BB /* MainViewController.m */; };
+		B5C10EBC1B36FF6E0073D3EE /* BrushTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EBB1B36FF6E0073D3EE /* BrushTool.m */; };
+		B5C10EBF1B36FF900073D3EE /* EraserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EBE1B36FF900073D3EE /* EraserTool.m */; };
+		B5C10EC21B36FFA80073D3EE /* SelectionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EC11B36FFA80073D3EE /* SelectionTool.m */; };
+		B5C10EC51B36FFD70073D3EE /* AirbrushTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EC41B36FFD70073D3EE /* AirbrushTool.m */; };
+		B5C10EC81B36FFED0073D3EE /* FillTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EC71B36FFED0073D3EE /* FillTool.m */; };
+		B5C10ECB1B36FFFE0073D3EE /* BombTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10ECA1B36FFFE0073D3EE /* BombTool.m */; };
+		B5C10ECE1B37000E0073D3EE /* LineTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10ECD1B37000E0073D3EE /* LineTool.m */; };
+		B5C10ED11B37001D0073D3EE /* CurveTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10ED01B37001D0073D3EE /* CurveTool.m */; };
+		B5C10ED41B3700490073D3EE /* RectangleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10ED31B3700490073D3EE /* RectangleTool.m */; };
+		B5C10ED71B3700570073D3EE /* EllipseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10ED61B3700570073D3EE /* EllipseTool.m */; };
+		B5C10EDA1B3700670073D3EE /* RoundedRectangleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10ED91B3700670073D3EE /* RoundedRectangleTool.m */; };
+		B5C10EDD1B37007D0073D3EE /* TextTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EDC1B37007D0073D3EE /* TextTool.m */; };
+		B5C10EE01B3701650073D3EE /* EyedropperTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EDF1B3701650073D3EE /* EyedropperTool.m */; };
+		B5C10EE31B3701720073D3EE /* ZoomTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EE21B3701720073D3EE /* ZoomTool.m */; };
 		B5D944FD1B35642A00605BD9 /* PaintView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D944FC1B35642A00605BD9 /* PaintView.m */; };
 		B5D945001B35A3A600605BD9 /* screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D944FF1B35A3A600605BD9 /* screenshot.png */; };
 		B5F90AA31B3168B7008976E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F90AA21B3168B7008976E8 /* AppDelegate.m */; };
@@ -30,6 +44,34 @@
 /* Begin PBXFileReference section */
 		B5819DCC1B31B41B0031D4BB /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		B5819DCD1B31B41B0031D4BB /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		B5C10EBA1B36FF6E0073D3EE /* BrushTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrushTool.h; sourceTree = "<group>"; };
+		B5C10EBB1B36FF6E0073D3EE /* BrushTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrushTool.m; sourceTree = "<group>"; };
+		B5C10EBD1B36FF900073D3EE /* EraserTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EraserTool.h; sourceTree = "<group>"; };
+		B5C10EBE1B36FF900073D3EE /* EraserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EraserTool.m; sourceTree = "<group>"; };
+		B5C10EC01B36FFA80073D3EE /* SelectionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionTool.h; sourceTree = "<group>"; };
+		B5C10EC11B36FFA80073D3EE /* SelectionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionTool.m; sourceTree = "<group>"; };
+		B5C10EC31B36FFD70073D3EE /* AirbrushTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirbrushTool.h; sourceTree = "<group>"; };
+		B5C10EC41B36FFD70073D3EE /* AirbrushTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirbrushTool.m; sourceTree = "<group>"; };
+		B5C10EC61B36FFED0073D3EE /* FillTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillTool.h; sourceTree = "<group>"; };
+		B5C10EC71B36FFED0073D3EE /* FillTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillTool.m; sourceTree = "<group>"; };
+		B5C10EC91B36FFFE0073D3EE /* BombTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombTool.h; sourceTree = "<group>"; };
+		B5C10ECA1B36FFFE0073D3EE /* BombTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BombTool.m; sourceTree = "<group>"; };
+		B5C10ECC1B37000E0073D3EE /* LineTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineTool.h; sourceTree = "<group>"; };
+		B5C10ECD1B37000E0073D3EE /* LineTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineTool.m; sourceTree = "<group>"; };
+		B5C10ECF1B37001D0073D3EE /* CurveTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurveTool.h; sourceTree = "<group>"; };
+		B5C10ED01B37001D0073D3EE /* CurveTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurveTool.m; sourceTree = "<group>"; };
+		B5C10ED21B3700490073D3EE /* RectangleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectangleTool.h; sourceTree = "<group>"; };
+		B5C10ED31B3700490073D3EE /* RectangleTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectangleTool.m; sourceTree = "<group>"; };
+		B5C10ED51B3700570073D3EE /* EllipseTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EllipseTool.h; sourceTree = "<group>"; };
+		B5C10ED61B3700570073D3EE /* EllipseTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EllipseTool.m; sourceTree = "<group>"; };
+		B5C10ED81B3700670073D3EE /* RoundedRectangleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedRectangleTool.h; sourceTree = "<group>"; };
+		B5C10ED91B3700670073D3EE /* RoundedRectangleTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedRectangleTool.m; sourceTree = "<group>"; };
+		B5C10EDB1B37007D0073D3EE /* TextTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextTool.h; sourceTree = "<group>"; };
+		B5C10EDC1B37007D0073D3EE /* TextTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextTool.m; sourceTree = "<group>"; };
+		B5C10EDE1B3701650073D3EE /* EyedropperTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EyedropperTool.h; sourceTree = "<group>"; };
+		B5C10EDF1B3701650073D3EE /* EyedropperTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EyedropperTool.m; sourceTree = "<group>"; };
+		B5C10EE11B3701720073D3EE /* ZoomTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomTool.h; sourceTree = "<group>"; };
+		B5C10EE21B3701720073D3EE /* ZoomTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomTool.m; sourceTree = "<group>"; };
 		B5D944FB1B35642A00605BD9 /* PaintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaintView.h; sourceTree = "<group>"; };
 		B5D944FC1B35642A00605BD9 /* PaintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaintView.m; sourceTree = "<group>"; };
 		B5D944FE1B35681600605BD9 /* PaintProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaintProtocol.h; sourceTree = "<group>"; };
@@ -64,6 +106,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5C10EB91B36FF3F0073D3EE /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				B5C10EBA1B36FF6E0073D3EE /* BrushTool.h */,
+				B5C10EBB1B36FF6E0073D3EE /* BrushTool.m */,
+				B5C10EBD1B36FF900073D3EE /* EraserTool.h */,
+				B5C10EBE1B36FF900073D3EE /* EraserTool.m */,
+				B5C10EC01B36FFA80073D3EE /* SelectionTool.h */,
+				B5C10EC11B36FFA80073D3EE /* SelectionTool.m */,
+				B5C10EC31B36FFD70073D3EE /* AirbrushTool.h */,
+				B5C10EC41B36FFD70073D3EE /* AirbrushTool.m */,
+				B5C10EC61B36FFED0073D3EE /* FillTool.h */,
+				B5C10EC71B36FFED0073D3EE /* FillTool.m */,
+				B5C10EC91B36FFFE0073D3EE /* BombTool.h */,
+				B5C10ECA1B36FFFE0073D3EE /* BombTool.m */,
+				B5C10ECC1B37000E0073D3EE /* LineTool.h */,
+				B5C10ECD1B37000E0073D3EE /* LineTool.m */,
+				B5C10ECF1B37001D0073D3EE /* CurveTool.h */,
+				B5C10ED01B37001D0073D3EE /* CurveTool.m */,
+				B5C10ED21B3700490073D3EE /* RectangleTool.h */,
+				B5C10ED31B3700490073D3EE /* RectangleTool.m */,
+				B5C10ED51B3700570073D3EE /* EllipseTool.h */,
+				B5C10ED61B3700570073D3EE /* EllipseTool.m */,
+				B5C10ED81B3700670073D3EE /* RoundedRectangleTool.h */,
+				B5C10ED91B3700670073D3EE /* RoundedRectangleTool.m */,
+				B5C10EDB1B37007D0073D3EE /* TextTool.h */,
+				B5C10EDC1B37007D0073D3EE /* TextTool.m */,
+				B5C10EDE1B3701650073D3EE /* EyedropperTool.h */,
+				B5C10EDF1B3701650073D3EE /* EyedropperTool.m */,
+				B5C10EE11B3701720073D3EE /* ZoomTool.h */,
+				B5C10EE21B3701720073D3EE /* ZoomTool.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
 		B5F90A931B3168B7008976E8 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +162,7 @@
 		B5F90A9E1B3168B7008976E8 /* MacOSBrush */ = {
 			isa = PBXGroup;
 			children = (
+				B5C10EB91B36FF3F0073D3EE /* Tools */,
 				B5F90AA11B3168B7008976E8 /* AppDelegate.h */,
 				B5F90AA21B3168B7008976E8 /* AppDelegate.m */,
 				B5F90AA61B3168B7008976E8 /* Images.xcassets */,
@@ -226,10 +304,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C10EC21B36FFA80073D3EE /* SelectionTool.m in Sources */,
+				B5C10ED11B37001D0073D3EE /* CurveTool.m in Sources */,
 				B5F90AA51B3168B7008976E8 /* main.m in Sources */,
+				B5C10ECE1B37000E0073D3EE /* LineTool.m in Sources */,
+				B5C10EBC1B36FF6E0073D3EE /* BrushTool.m in Sources */,
+				B5C10ECB1B36FFFE0073D3EE /* BombTool.m in Sources */,
+				B5C10EDA1B3700670073D3EE /* RoundedRectangleTool.m in Sources */,
 				B5D944FD1B35642A00605BD9 /* PaintView.m in Sources */,
+				B5C10EE01B3701650073D3EE /* EyedropperTool.m in Sources */,
+				B5C10EDD1B37007D0073D3EE /* TextTool.m in Sources */,
+				B5C10EBF1B36FF900073D3EE /* EraserTool.m in Sources */,
 				B5819DCE1B31B41B0031D4BB /* MainViewController.m in Sources */,
 				B5F90AA31B3168B7008976E8 /* AppDelegate.m in Sources */,
+				B5C10ED71B3700570073D3EE /* EllipseTool.m in Sources */,
+				B5C10EE31B3701720073D3EE /* ZoomTool.m in Sources */,
+				B5C10EC81B36FFED0073D3EE /* FillTool.m in Sources */,
+				B5C10ED41B3700490073D3EE /* RectangleTool.m in Sources */,
+				B5C10EC51B36FFD70073D3EE /* AirbrushTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
