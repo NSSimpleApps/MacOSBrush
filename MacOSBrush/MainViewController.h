@@ -10,4 +10,6 @@
 
 @interface MainViewController : NSViewController
 
+@property (assign, nonatomic) NSInteger lineWidth;
+
 @end

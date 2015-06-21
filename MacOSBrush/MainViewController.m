@@ -14,6 +14,10 @@
 
 @property (weak) IBOutlet NSScrollView *paintScrollView;
 
+@property (assign, nonatomic) NSPoint p0;
+
+@property (strong, nonatomic) NSBezierPath *bezierPath;
+
 @end
 
 @implementation MainViewController
@@ -35,6 +39,7 @@
     PaintView *paintView = [[PaintView alloc] initWithFrame:imageRect];
     //paintView.bounds = imageRect;
     paintView.image = image;
+    paintView.delegate = self;
     
     self.paintScrollView.documentView = paintView;
     self.paintScrollView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -74,6 +79,45 @@
                                                          attribute:NSLayoutAttributeHeight
                                                         multiplier:1
                                                           constant:0]];
+}
+
+#pragma - mark PaintProtocol
+
+- (void)drawingDidBeginAtPoint:(NSPoint)point inView:(PaintView *)paintView {
+    
+    self.p0 = point;
+    
+    self.bezierPath = [NSBezierPath bezierPath];
+    self.bezierPath.lineWidth = self.lineWidth;
+}
+
+- (void)drawingMovedToPoint:(NSPoint)point inView:(PaintView *)paintView {
+    
+    [paintView.image lockFocus];
+    
+    [[NSGraphicsContext currentContext] setShouldAntialias:NO];
+    [NSGraphicsContext saveGraphicsState];
+    [[NSGraphicsContext currentContext] setCompositingOperation:NSCompositeCopy];
+    
+    [[NSColor blackColor] setStroke];
+    
+    [self.bezierPath moveToPoint:self.p0];
+    [self.bezierPath lineToPoint:point];
+    [self.bezierPath stroke];
+    
+    [NSGraphicsContext restoreGraphicsState];
+     
+    self.p0 = point;
+    
+    [paintView setNeedsDisplay];
+    
+    [paintView.image unlockFocus];
+}
+
+- (void)drawingDidEndAtPoint:(NSPoint)point inView:(PaintView *)paintView {
+    
+    [self.bezierPath closePath];
+    self.bezierPath = nil;
 }
 
 - (IBAction)setBrushMode:(NSMatrix *)sender {

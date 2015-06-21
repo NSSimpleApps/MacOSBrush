@@ -7,12 +7,9 @@
 //
 
 #import "PaintView.h"
+#import "PaintProtocol.h"
 
 @interface PaintView ()
-
-@property (strong, nonatomic) NSBezierPath *bezierPath;
-
-@property (assign, nonatomic) NSPoint savedPoint;
 
 @end
 
@@ -23,49 +20,36 @@
     
 }
 
+- (NSPoint)convertPointToImageCoordinate:(NSPoint)point {
+    
+    CGFloat frameWidth = self.frame.size.width;
+    CGFloat frameHeight = self.frame.size.height;
+    
+    CGFloat imageWidth = self.image.size.width;
+    CGFloat imageHeight = self.image.size.height;
+    
+    return NSMakePoint(point.x - (frameWidth - imageWidth)/2, point.y - (frameHeight - imageHeight)/2);
+}
+
 - (void)mouseDown:(NSEvent *)theEvent {
     
-    self.savedPoint = [self convertPoint:[theEvent locationInWindow] fromView:nil];
+    NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
+    
+    [self.delegate drawingDidBeginAtPoint:[self convertPointToImageCoordinate:point] inView:self];
 }
 
 - (void)mouseDragged:(NSEvent *)theEvent {
     
-    NSLog(@"%s", __func__);
     NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
     
-    [self.image lockFocus];
-    
-    [[NSGraphicsContext currentContext] setShouldAntialias:NO];
-    
-    [NSGraphicsContext saveGraphicsState];
-    [[NSGraphicsContext currentContext] setCompositingOperation:NSCompositeCopy];
-    
-    [[NSColor blackColor] setStroke];
-    
-    [[self pathFromPoint:self.savedPoint toPoint:point] stroke];
-    [NSGraphicsContext restoreGraphicsState];
-    
-    self.savedPoint = point;
-    
-    [self setNeedsDisplay];
-    
-    [self.image unlockFocus];
-    
-    
+    [self.delegate drawingMovedToPoint:[self convertPointToImageCoordinate:point] inView:self];
 }
 
-
-- (NSBezierPath *)pathFromPoint:(NSPoint)begin toPoint:(NSPoint)end
-{
-    if (!self.bezierPath) {
-        self.bezierPath = [NSBezierPath bezierPathWithRect:self.frame];
-        [self.bezierPath setLineWidth:2];
-    }
+- (void)mouseUp:(NSEvent *)theEvent {
     
-    [self.bezierPath moveToPoint:begin];
-    [self.bezierPath lineToPoint:end];
+    NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
     
-    return self.bezierPath;
+    [self.delegate drawingDidEndAtPoint:[self convertPointToImageCoordinate:point] inView:self];
 }
 
 @end
