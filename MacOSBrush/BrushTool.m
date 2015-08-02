@@ -30,7 +30,7 @@
     
     if (self) {
         
-        self.cursor = [[NSCursor alloc] initWithImage:[NSImage imageNamed:@"brush-cursor"] hotSpot:NSZeroPoint];
+        self.cursor = [[NSCursor alloc] initWithImage:[NSImage imageNamed:@"brush-cursor"] hotSpot:NSMakePoint(1, 14)];
     }
     return self;
 }

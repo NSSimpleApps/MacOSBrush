@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "PaintProtocol.h"
 
+@class NSColor, NSCursor;
+
 @interface BombTool : NSObject <PaintProtocol>
+
+@property (strong, nonatomic) NSColor *color;
+
+@property (strong, nonatomic) NSCursor *cursor;
 
 @end

@@ -10,6 +10,7 @@
 #import "PaintView.h"
 #import "BrushTool.h"
 #import "EraserTool.h"
+#import "BombTool.h"
 
 @interface MainViewController ()
 
@@ -17,6 +18,7 @@
 
 @property (strong, nonatomic) BrushTool *brushTool;
 @property (strong, nonatomic) EraserTool *eraserTool;
+@property (strong, nonatomic) BombTool *bombTool;
 
 @end
 
@@ -43,43 +45,7 @@
     paintView.image = image;
     
     self.paintScrollView.documentView = paintView;
-    self.paintScrollView.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    NSView *clipView = [self.paintScrollView.documentView superview];
-    
-    [(PaintView*)self.paintScrollView.documentView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
-    [clipView addConstraint:[NSLayoutConstraint constraintWithItem:clipView
-                                                         attribute:NSLayoutAttributeCenterX
-                                                         relatedBy:NSLayoutRelationEqual
-                                                            toItem:self.paintScrollView.documentView
-                                                         attribute:NSLayoutAttributeCenterX
-                                                        multiplier:1
-                                                          constant:0]];
-    
-    [clipView addConstraint:[NSLayoutConstraint constraintWithItem:clipView
-                                                         attribute:NSLayoutAttributeCenterY
-                                                         relatedBy:NSLayoutRelationEqual
-                                                            toItem:self.paintScrollView.documentView
-                                                         attribute:NSLayoutAttributeCenterY
-                                                        multiplier:1
-                                                          constant:0]];
-    
-    [clipView addConstraint:[NSLayoutConstraint constraintWithItem:paintView
-                                                         attribute:NSLayoutAttributeWidth
-                                                         relatedBy:NSLayoutRelationGreaterThanOrEqual
-                                                            toItem:self.paintScrollView.contentView
-                                                         attribute:NSLayoutAttributeWidth
-                                                        multiplier:1
-                                                          constant:0]];
-    
-    [clipView addConstraint:[NSLayoutConstraint constraintWithItem:paintView
-                                                         attribute:NSLayoutAttributeHeight
-                                                         relatedBy:NSLayoutRelationGreaterThanOrEqual
-                                                            toItem:self.paintScrollView.contentView
-                                                         attribute:NSLayoutAttributeHeight
-                                                        multiplier:1
-                                                          constant:0]];
+    //self.paintScrollView.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
 - (void)setLineWidth:(NSInteger)lineWidth {
@@ -90,6 +56,8 @@
     self.brushTool.lineColor = [NSColor blackColor];
     
     self.eraserTool.lineWidth = lineWidth;
+    
+    self.bombTool.color = [NSColor greenColor];
 }
 
 - (BrushTool *)brushTool {
@@ -108,6 +76,15 @@
         _eraserTool = [EraserTool new];
     }
     return _eraserTool;
+}
+
+- (BombTool *)bombTool {
+    
+    if (_bombTool == nil) {
+        
+        _bombTool = [BombTool new];
+    }
+    return _bombTool;
 }
 
 - (IBAction)setBrushMode:(NSMatrix *)sender {
@@ -169,9 +146,11 @@
 
 - (IBAction)setBombMode:(NSMatrix *)sender {
     
-    NSCursor *bombCursor = [[NSCursor alloc] initWithImage:[NSImage imageNamed:@"bomb-cursor"] hotSpot:NSZeroPoint];
     
-    [self.paintScrollView setDocumentCursor:bombCursor];
+    [self.paintScrollView setDocumentCursor:self.bombTool.cursor];
+    
+    PaintView *paintView = self.paintScrollView.contentView.documentView;
+    paintView.delegate = self.bombTool;
 }
 
 - (IBAction)setCurveMode:(NSMatrix *)sender {

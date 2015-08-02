@@ -15,6 +15,10 @@
 
 @implementation PaintView
 
+
+
+
+
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     
@@ -33,23 +37,32 @@
 
 - (void)mouseDown:(NSEvent *)theEvent {
     
-    NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
-    
-    [self.delegate drawingDidBeginAtPoint:[self convertPointToImageCoordinate:point] inView:self];
+    if ([self.delegate respondsToSelector:@selector(drawingDidBeginAtPoint:inView:)]) {
+        
+        NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
+        
+        [self.delegate drawingDidBeginAtPoint:[self convertPointToImageCoordinate:point] inView:self];
+    }
 }
 
 - (void)mouseDragged:(NSEvent *)theEvent {
     
-    NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
+    if ([self.delegate respondsToSelector:@selector(drawingMovedToPoint:inView:)]) {
     
-    [self.delegate drawingMovedToPoint:[self convertPointToImageCoordinate:point] inView:self];
+        NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
+    
+        [self.delegate drawingMovedToPoint:[self convertPointToImageCoordinate:point] inView:self];
+    }
 }
 
 - (void)mouseUp:(NSEvent *)theEvent {
     
-    NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
+    if ([self.delegate respondsToSelector:@selector(drawingDidEndAtPoint:inView:)]) {
     
-    [self.delegate drawingDidEndAtPoint:[self convertPointToImageCoordinate:point] inView:self];
+        NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
+    
+        [self.delegate drawingDidEndAtPoint:[self convertPointToImageCoordinate:point] inView:self];
+    }
 }
 
 @end
