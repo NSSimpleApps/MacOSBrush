@@ -11,6 +11,7 @@
 #import "BrushTool.h"
 #import "EraserTool.h"
 #import "BombTool.h"
+#import "LineTool.h"
 
 @interface MainViewController ()
 
@@ -19,7 +20,7 @@
 @property (strong, nonatomic) BrushTool *brushTool;
 @property (strong, nonatomic) EraserTool *eraserTool;
 @property (strong, nonatomic) BombTool *bombTool;
-
+@property (strong, nonatomic) LineTool *lineTool;
 @end
 
 @implementation MainViewController
@@ -58,6 +59,9 @@
     self.eraserTool.lineWidth = lineWidth;
     
     self.bombTool.color = [NSColor greenColor];
+    
+    self.lineTool.lineWidth = lineWidth;
+    self.lineTool.color = [NSColor blackColor];
 }
 
 - (BrushTool *)brushTool {
@@ -87,6 +91,15 @@
     return _bombTool;
 }
 
+- (LineTool *)lineTool {
+    
+    if (_lineTool == nil) {
+        
+        _lineTool = [LineTool new];
+    }
+    return _lineTool;
+}
+
 - (IBAction)setBrushMode:(NSMatrix *)sender {
     
     [self.paintScrollView setDocumentCursor:self.brushTool.cursor];
@@ -109,7 +122,10 @@
 
 - (IBAction)setLineMode:(NSMatrix *)sender {
     
-    [self.paintScrollView setDocumentCursor:[NSCursor crosshairCursor]];
+    [self.paintScrollView setDocumentCursor:self.lineTool.cursor];
+    
+    PaintView *paintView = self.paintScrollView.contentView.documentView;
+    paintView.delegate = self.lineTool;
 }
 
 - (IBAction)setRectangleMode:(NSMatrix *)sender {

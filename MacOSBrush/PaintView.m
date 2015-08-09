@@ -9,20 +9,8 @@
 #import "PaintView.h"
 #import "PaintProtocol.h"
 
-@interface PaintView ()
-
-@end
-
 @implementation PaintView
 
-
-
-
-
-- (void)drawRect:(NSRect)dirtyRect {
-    [super drawRect:dirtyRect];
-    
-}
 
 - (NSPoint)convertPointToImageCoordinate:(NSPoint)point {
     
@@ -64,5 +52,19 @@
         [self.delegate drawingDidEndAtPoint:[self convertPointToImageCoordinate:point] inView:self];
     }
 }
+
+/*- (void)updateTrackingAreas {
+    
+    if (self.trackingAreas.count == 0) {
+        
+        NSUInteger opts = (NSTrackingMouseEnteredAndExited | NSTrackingActiveInKeyWindow | NSTrackingEnabledDuringMouseDrag);
+        
+        NSTrackingArea *trackingArea = [[NSTrackingArea alloc] initWithRect:self.bounds
+                                                                    options:opts
+                                                                      owner:self
+                                                                   userInfo:nil];
+        [self addTrackingArea:trackingArea];
+    }
+}*/
 
 @end

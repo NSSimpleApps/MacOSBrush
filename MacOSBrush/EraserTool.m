@@ -18,8 +18,6 @@
 
 @property (strong, nonatomic) NSBezierPath *bezierPath;
 
-@property (assign, nonatomic) NSPoint p0;
-
 @end
 
 @implementation EraserTool
@@ -37,10 +35,9 @@
 
 - (void)drawingDidBeginAtPoint:(NSPoint)point inView:(NSImageView*)paintView {
     
-    self.p0 = point;
-    
     self.bezierPath = [NSBezierPath bezierPath];
     self.bezierPath.lineWidth = self.lineWidth;
+    [self.bezierPath moveToPoint:point];
 }
 
 - (void)drawingMovedToPoint:(NSPoint)point inView:(NSImageView*)paintView {
@@ -53,17 +50,13 @@
     
     [[NSColor whiteColor] setStroke];
     
-    [self.bezierPath moveToPoint:self.p0];
     [self.bezierPath lineToPoint:point];
     [self.bezierPath stroke];
     
     [NSGraphicsContext restoreGraphicsState];
     
-    self.p0 = point;
-    
-    [paintView setNeedsDisplay];
-    
     [paintView.image unlockFocus];
+    [paintView setNeedsDisplay];
 }
 
 - (void)drawingDidEndAtPoint:(NSPoint)point inView:(NSImageView*)paintView {
