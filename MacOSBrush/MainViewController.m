@@ -8,19 +8,17 @@
 
 #import "MainViewController.h"
 #import "PaintView.h"
-#import "BrushTool.h"
-#import "EraserTool.h"
-#import "BombTool.h"
+#import "BrushImageView.h"
+#import "EraserImageView.h"
+#import "BombImageView.h"
 #import "LineTool.h"
+#import "EllipseTool.h"
+#import <objc/runtime.h>
 
 @interface MainViewController ()
 
 @property (weak) IBOutlet NSScrollView *paintScrollView;
 
-@property (strong, nonatomic) BrushTool *brushTool;
-@property (strong, nonatomic) EraserTool *eraserTool;
-@property (strong, nonatomic) BombTool *bombTool;
-@property (strong, nonatomic) LineTool *lineTool;
 @end
 
 @implementation MainViewController
@@ -30,6 +28,7 @@
     [super viewDidLoad];
     
     self.lineWidth = 2;
+    self.color = [NSColor colorWithRed:15.f/255 green:14.f/255 blue:1 alpha:1];
     
     NSRect frameRect = NSMakeRect(0, 0, 640, 480);
     NSImage *image = [[NSImage alloc] initWithSize:frameRect.size];
@@ -42,7 +41,6 @@
     NSRect imageRect = NSMakeRect(0, 0, image.size.width, image.size.height);
     
     PaintView *paintView = [[PaintView alloc] initWithFrame:imageRect];
-    //paintView.bounds = imageRect;
     paintView.image = image;
     
     self.paintScrollView.documentView = paintView;
@@ -53,59 +51,31 @@
     
     _lineWidth = lineWidth;
     
-    self.brushTool.lineWidth = lineWidth;
-    self.brushTool.lineColor = [NSColor blackColor];
-    
-    self.eraserTool.lineWidth = lineWidth;
-    
-    self.bombTool.color = [NSColor greenColor];
-    
-    self.lineTool.lineWidth = lineWidth;
-    self.lineTool.color = [NSColor blackColor];
+    if ([self.paintScrollView.contentView.documentView respondsToSelector:@selector(lineWidth)]) {
+        
+        [self.paintScrollView.contentView.documentView setValue:@(lineWidth) forKey:@"lineWidth"];
+    }
 }
 
-- (BrushTool *)brushTool {
+- (void)setColor:(NSColor *)color {
     
-    if (_brushTool == nil) {
-        
-        _brushTool = [BrushTool new];
-    }
-    return _brushTool;
-}
-
-- (EraserTool *)eraserTool {
+    _color = color;
     
-    if (_eraserTool == nil) {
+    if ([self.paintScrollView.contentView.documentView respondsToSelector:@selector(color)]) {
         
-        _eraserTool = [EraserTool new];
+        [self.paintScrollView.contentView.documentView setValue:color forKey:@"color"];
     }
-    return _eraserTool;
-}
-
-- (BombTool *)bombTool {
-    
-    if (_bombTool == nil) {
-        
-        _bombTool = [BombTool new];
-    }
-    return _bombTool;
-}
-
-- (LineTool *)lineTool {
-    
-    if (_lineTool == nil) {
-        
-        _lineTool = [LineTool new];
-    }
-    return _lineTool;
 }
 
 - (IBAction)setBrushMode:(NSMatrix *)sender {
     
-    [self.paintScrollView setDocumentCursor:self.brushTool.cursor];
+    [self.paintScrollView setDocumentCursor:[BrushImageView cursor]];
     
-    PaintView *paintView = self.paintScrollView.contentView.documentView;
-    paintView.delegate = self.brushTool;
+    object_setClass(self.paintScrollView.contentView.documentView, [BrushImageView class]);
+    
+    BrushImageView *brushImageView = self.paintScrollView.contentView.documentView;
+    brushImageView.color = self.color;
+    brushImageView.lineWidth = self.lineWidth;
 }
 
 - (IBAction)setSelectionMode:(NSMatrix *)sender {
@@ -122,10 +92,10 @@
 
 - (IBAction)setLineMode:(NSMatrix *)sender {
     
-    [self.paintScrollView setDocumentCursor:self.lineTool.cursor];
+    /*[self.paintScrollView setDocumentCursor:self.lineTool.cursor];
     
     PaintView *paintView = self.paintScrollView.contentView.documentView;
-    paintView.delegate = self.lineTool;
+    paintView.delegate = self.lineTool;*/
 }
 
 - (IBAction)setRectangleMode:(NSMatrix *)sender {
@@ -140,17 +110,19 @@
 
 - (IBAction)setEyedropperMode:(NSMatrix *)sender {
     
-    NSCursor *eyedropCursor = [[NSCursor alloc] initWithImage:[NSImage imageNamed:@"eyedrop-cursor"] hotSpot:NSZeroPoint];
+    /*NSCursor *eyedropCursor = [[NSCursor alloc] initWithImage:[NSImage imageNamed:@"eyedrop-cursor"] hotSpot:NSZeroPoint];
     
-    [self.paintScrollView setDocumentCursor:eyedropCursor];
+    [self.paintScrollView setDocumentCursor:eyedropCursor];*/
 }
 
 - (IBAction)setEraserMode:(NSMatrix *)sender {
     
-    [self.paintScrollView setDocumentCursor:self.eraserTool.cursor];
+    [self.paintScrollView setDocumentCursor:[EraserImageView cursor]];
     
-    PaintView *paintView = self.paintScrollView.contentView.documentView;
-    paintView.delegate = self.eraserTool;
+    object_setClass(self.paintScrollView.contentView.documentView, [EraserImageView class]);
+    
+    EraserImageView *eraserImageView = self.paintScrollView.contentView.documentView;
+    eraserImageView.lineWidth = self.lineWidth;
 }
 
 - (IBAction)setAirbrushMode:(NSMatrix *)sender {
@@ -162,11 +134,12 @@
 
 - (IBAction)setBombMode:(NSMatrix *)sender {
     
+    [self.paintScrollView setDocumentCursor:[BombImageView cursor]];
     
-    [self.paintScrollView setDocumentCursor:self.bombTool.cursor];
+    object_setClass(self.paintScrollView.contentView.documentView, [BombImageView class]);
     
-    PaintView *paintView = self.paintScrollView.contentView.documentView;
-    paintView.delegate = self.bombTool;
+    //BombImageView *bombImageView = self.paintScrollView.contentView.documentView;
+    //bombImageView.color = self.color;
 }
 
 - (IBAction)setCurveMode:(NSMatrix *)sender {

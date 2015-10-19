@@ -12,4 +12,6 @@
 
 @property (assign, nonatomic) NSInteger lineWidth;
 
+@property (strong, nonatomic) NSColor *color;
+
 @end

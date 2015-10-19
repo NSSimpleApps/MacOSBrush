@@ -1,13 +1,15 @@
 //
-//  RectangleTool.h
+//  AirbrushImageView.m
 //  MacOSBrush
 //
 //  Created by NSSimpleApps on 21.06.15.
 //  Copyright (c) 2015 NSSimpleApps. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "AirbrushImageView.h"
 
-@interface RectangleTool : NSObject
+@implementation AirbrushImageView
+
+
 
 @end

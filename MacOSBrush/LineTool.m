@@ -7,12 +7,6 @@
 //
 
 #import "LineTool.h"
-#import <AppKit/NSImageView.h>
-#import <AppKit/NSImage.h>
-#import <AppKit/NSCursor.h>
-#import <AppKit/NSColor.h>
-#import <AppKit/NSBezierPath.h>
-#import <AppKit/NSGraphicsContext.h>
 
 @interface LineTool ()
 
@@ -24,15 +18,9 @@
 
 @implementation LineTool
 
-- (instancetype)init {
++ (NSCursor *)cursor {
     
-    self = [super init];
-    
-    if (self) {
-        
-        self.cursor = [NSCursor crosshairCursor];
-    }
-    return self;
+    return [NSCursor crosshairCursor];
 }
 
 - (NSBezierPath *)bezierPathFromPoint:(NSPoint)p0 toPoint:(NSPoint)p1 {

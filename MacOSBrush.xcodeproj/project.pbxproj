@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		B54F06071B493A05007941CF /* NSBezierPath+CGPath.m in Sources */ = {isa = PBXBuildFile; fileRef = B54F06061B493A05007941CF /* NSBezierPath+CGPath.m */; };
 		B5819DCE1B31B41B0031D4BB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5819DCD1B31B41B0031D4BB /* MainViewController.m */; };
-		B5C10EBC1B36FF6E0073D3EE /* BrushTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EBB1B36FF6E0073D3EE /* BrushTool.m */; };
-		B5C10EBF1B36FF900073D3EE /* EraserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EBE1B36FF900073D3EE /* EraserTool.m */; };
-		B5C10EC21B36FFA80073D3EE /* SelectionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EC11B36FFA80073D3EE /* SelectionTool.m */; };
-		B5C10EC51B36FFD70073D3EE /* AirbrushTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EC41B36FFD70073D3EE /* AirbrushTool.m */; };
-		B5C10EC81B36FFED0073D3EE /* FillTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EC71B36FFED0073D3EE /* FillTool.m */; };
-		B5C10ECB1B36FFFE0073D3EE /* BombTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10ECA1B36FFFE0073D3EE /* BombTool.m */; };
+		B5ABA8B51BD53B99008B7F1F /* PaintView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ABA8B41BD53B99008B7F1F /* PaintView.m */; settings = {ASSET_TAGS = (); }; };
+		B5C10EBC1B36FF6E0073D3EE /* BrushImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EBB1B36FF6E0073D3EE /* BrushImageView.m */; };
+		B5C10EBF1B36FF900073D3EE /* EraserImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EBE1B36FF900073D3EE /* EraserImageView.m */; };
+		B5C10EC21B36FFA80073D3EE /* SelectionImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EC11B36FFA80073D3EE /* SelectionImageView.m */; };
+		B5C10EC51B36FFD70073D3EE /* AirbrushImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EC41B36FFD70073D3EE /* AirbrushImageView.m */; };
+		B5C10EC81B36FFED0073D3EE /* FillImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EC71B36FFED0073D3EE /* FillImageView.m */; };
+		B5C10ECB1B36FFFE0073D3EE /* BombImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10ECA1B36FFFE0073D3EE /* BombImageView.m */; };
 		B5C10ECE1B37000E0073D3EE /* LineTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10ECD1B37000E0073D3EE /* LineTool.m */; };
 		B5C10ED11B37001D0073D3EE /* CurveTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10ED01B37001D0073D3EE /* CurveTool.m */; };
 		B5C10ED41B3700490073D3EE /* RectangleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10ED31B3700490073D3EE /* RectangleTool.m */; };
@@ -23,43 +24,33 @@
 		B5C10EDD1B37007D0073D3EE /* TextTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EDC1B37007D0073D3EE /* TextTool.m */; };
 		B5C10EE01B3701650073D3EE /* EyedropperTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EDF1B3701650073D3EE /* EyedropperTool.m */; };
 		B5C10EE31B3701720073D3EE /* ZoomTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EE21B3701720073D3EE /* ZoomTool.m */; };
-		B5D944FD1B35642A00605BD9 /* PaintView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D944FC1B35642A00605BD9 /* PaintView.m */; };
 		B5D945001B35A3A600605BD9 /* screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D944FF1B35A3A600605BD9 /* screenshot.png */; };
 		B5DC5E551B4998EC007F6F62 /* CustomClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DC5E541B4998EC007F6F62 /* CustomClipView.m */; };
 		B5F90AA31B3168B7008976E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F90AA21B3168B7008976E8 /* AppDelegate.m */; };
 		B5F90AA51B3168B7008976E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F90AA41B3168B7008976E8 /* main.m */; };
 		B5F90AA71B3168B7008976E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F90AA61B3168B7008976E8 /* Images.xcassets */; };
 		B5F90AAA1B3168B7008976E8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F90AA81B3168B7008976E8 /* MainMenu.xib */; };
-		B5F90AB61B3168B7008976E8 /* MacOSBrushTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F90AB51B3168B7008976E8 /* MacOSBrushTests.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B5F90AB01B3168B7008976E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5F90A941B3168B7008976E8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B5F90A9B1B3168B7008976E8;
-			remoteInfo = MacOSBrush;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B54F06051B493A05007941CF /* NSBezierPath+CGPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+CGPath.h"; sourceTree = "<group>"; };
 		B54F06061B493A05007941CF /* NSBezierPath+CGPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+CGPath.m"; sourceTree = "<group>"; };
 		B5819DCC1B31B41B0031D4BB /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		B5819DCD1B31B41B0031D4BB /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		B5C10EBA1B36FF6E0073D3EE /* BrushTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrushTool.h; sourceTree = "<group>"; };
-		B5C10EBB1B36FF6E0073D3EE /* BrushTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrushTool.m; sourceTree = "<group>"; };
-		B5C10EBD1B36FF900073D3EE /* EraserTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EraserTool.h; sourceTree = "<group>"; };
-		B5C10EBE1B36FF900073D3EE /* EraserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EraserTool.m; sourceTree = "<group>"; };
-		B5C10EC01B36FFA80073D3EE /* SelectionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionTool.h; sourceTree = "<group>"; };
-		B5C10EC11B36FFA80073D3EE /* SelectionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionTool.m; sourceTree = "<group>"; };
-		B5C10EC31B36FFD70073D3EE /* AirbrushTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirbrushTool.h; sourceTree = "<group>"; };
-		B5C10EC41B36FFD70073D3EE /* AirbrushTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirbrushTool.m; sourceTree = "<group>"; };
-		B5C10EC61B36FFED0073D3EE /* FillTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillTool.h; sourceTree = "<group>"; };
-		B5C10EC71B36FFED0073D3EE /* FillTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillTool.m; sourceTree = "<group>"; };
-		B5C10EC91B36FFFE0073D3EE /* BombTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombTool.h; sourceTree = "<group>"; };
-		B5C10ECA1B36FFFE0073D3EE /* BombTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BombTool.m; sourceTree = "<group>"; };
+		B5ABA8B31BD53B99008B7F1F /* PaintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaintView.h; sourceTree = "<group>"; };
+		B5ABA8B41BD53B99008B7F1F /* PaintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaintView.m; sourceTree = "<group>"; };
+		B5C10EBA1B36FF6E0073D3EE /* BrushImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrushImageView.h; sourceTree = "<group>"; };
+		B5C10EBB1B36FF6E0073D3EE /* BrushImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrushImageView.m; sourceTree = "<group>"; };
+		B5C10EBD1B36FF900073D3EE /* EraserImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EraserImageView.h; sourceTree = "<group>"; };
+		B5C10EBE1B36FF900073D3EE /* EraserImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EraserImageView.m; sourceTree = "<group>"; };
+		B5C10EC01B36FFA80073D3EE /* SelectionImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionImageView.h; sourceTree = "<group>"; };
+		B5C10EC11B36FFA80073D3EE /* SelectionImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionImageView.m; sourceTree = "<group>"; };
+		B5C10EC31B36FFD70073D3EE /* AirbrushImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirbrushImageView.h; sourceTree = "<group>"; };
+		B5C10EC41B36FFD70073D3EE /* AirbrushImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirbrushImageView.m; sourceTree = "<group>"; };
+		B5C10EC61B36FFED0073D3EE /* FillImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillImageView.h; sourceTree = "<group>"; };
+		B5C10EC71B36FFED0073D3EE /* FillImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillImageView.m; sourceTree = "<group>"; };
+		B5C10EC91B36FFFE0073D3EE /* BombImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombImageView.h; sourceTree = "<group>"; };
+		B5C10ECA1B36FFFE0073D3EE /* BombImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BombImageView.m; sourceTree = "<group>"; };
 		B5C10ECC1B37000E0073D3EE /* LineTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineTool.h; sourceTree = "<group>"; };
 		B5C10ECD1B37000E0073D3EE /* LineTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineTool.m; sourceTree = "<group>"; };
 		B5C10ECF1B37001D0073D3EE /* CurveTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurveTool.h; sourceTree = "<group>"; };
@@ -76,9 +67,6 @@
 		B5C10EDF1B3701650073D3EE /* EyedropperTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EyedropperTool.m; sourceTree = "<group>"; };
 		B5C10EE11B3701720073D3EE /* ZoomTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomTool.h; sourceTree = "<group>"; };
 		B5C10EE21B3701720073D3EE /* ZoomTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomTool.m; sourceTree = "<group>"; };
-		B5D944FB1B35642A00605BD9 /* PaintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaintView.h; sourceTree = "<group>"; };
-		B5D944FC1B35642A00605BD9 /* PaintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaintView.m; sourceTree = "<group>"; };
-		B5D944FE1B35681600605BD9 /* PaintProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaintProtocol.h; sourceTree = "<group>"; };
 		B5D944FF1B35A3A600605BD9 /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
 		B5DC5E531B4998EC007F6F62 /* CustomClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomClipView.h; sourceTree = "<group>"; };
 		B5DC5E541B4998EC007F6F62 /* CustomClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomClipView.m; sourceTree = "<group>"; };
@@ -89,20 +77,10 @@
 		B5F90AA41B3168B7008976E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B5F90AA61B3168B7008976E8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B5F90AA91B3168B7008976E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		B5F90AAF1B3168B7008976E8 /* MacOSBrushTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacOSBrushTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5F90AB41B3168B7008976E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B5F90AB51B3168B7008976E8 /* MacOSBrushTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MacOSBrushTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B5F90A991B3168B7008976E8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B5F90AAC1B3168B7008976E8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,18 +93,18 @@
 		B5C10EB91B36FF3F0073D3EE /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				B5C10EBA1B36FF6E0073D3EE /* BrushTool.h */,
-				B5C10EBB1B36FF6E0073D3EE /* BrushTool.m */,
-				B5C10EBD1B36FF900073D3EE /* EraserTool.h */,
-				B5C10EBE1B36FF900073D3EE /* EraserTool.m */,
-				B5C10EC01B36FFA80073D3EE /* SelectionTool.h */,
-				B5C10EC11B36FFA80073D3EE /* SelectionTool.m */,
-				B5C10EC31B36FFD70073D3EE /* AirbrushTool.h */,
-				B5C10EC41B36FFD70073D3EE /* AirbrushTool.m */,
-				B5C10EC61B36FFED0073D3EE /* FillTool.h */,
-				B5C10EC71B36FFED0073D3EE /* FillTool.m */,
-				B5C10EC91B36FFFE0073D3EE /* BombTool.h */,
-				B5C10ECA1B36FFFE0073D3EE /* BombTool.m */,
+				B5C10EBA1B36FF6E0073D3EE /* BrushImageView.h */,
+				B5C10EBB1B36FF6E0073D3EE /* BrushImageView.m */,
+				B5C10EBD1B36FF900073D3EE /* EraserImageView.h */,
+				B5C10EBE1B36FF900073D3EE /* EraserImageView.m */,
+				B5C10EC01B36FFA80073D3EE /* SelectionImageView.h */,
+				B5C10EC11B36FFA80073D3EE /* SelectionImageView.m */,
+				B5C10EC31B36FFD70073D3EE /* AirbrushImageView.h */,
+				B5C10EC41B36FFD70073D3EE /* AirbrushImageView.m */,
+				B5C10EC61B36FFED0073D3EE /* FillImageView.h */,
+				B5C10EC71B36FFED0073D3EE /* FillImageView.m */,
+				B5C10EC91B36FFFE0073D3EE /* BombImageView.h */,
+				B5C10ECA1B36FFFE0073D3EE /* BombImageView.m */,
 				B5C10ECC1B37000E0073D3EE /* LineTool.h */,
 				B5C10ECD1B37000E0073D3EE /* LineTool.m */,
 				B5C10ECF1B37001D0073D3EE /* CurveTool.h */,
@@ -145,6 +123,8 @@
 				B5C10EE21B3701720073D3EE /* ZoomTool.m */,
 				B54F06051B493A05007941CF /* NSBezierPath+CGPath.h */,
 				B54F06061B493A05007941CF /* NSBezierPath+CGPath.m */,
+				B5ABA8B31BD53B99008B7F1F /* PaintView.h */,
+				B5ABA8B41BD53B99008B7F1F /* PaintView.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -153,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				B5F90A9E1B3168B7008976E8 /* MacOSBrush */,
-				B5F90AB21B3168B7008976E8 /* MacOSBrushTests */,
 				B5F90A9D1B3168B7008976E8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -162,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				B5F90A9C1B3168B7008976E8 /* MacOSBrush.app */,
-				B5F90AAF1B3168B7008976E8 /* MacOSBrushTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,9 +155,6 @@
 				B5F90AA81B3168B7008976E8 /* MainMenu.xib */,
 				B5819DCC1B31B41B0031D4BB /* MainViewController.h */,
 				B5819DCD1B31B41B0031D4BB /* MainViewController.m */,
-				B5D944FB1B35642A00605BD9 /* PaintView.h */,
-				B5D944FC1B35642A00605BD9 /* PaintView.m */,
-				B5D944FE1B35681600605BD9 /* PaintProtocol.h */,
 				B5D944FF1B35A3A600605BD9 /* screenshot.png */,
 				B5F90A9F1B3168B7008976E8 /* Supporting Files */,
 				B5DC5E531B4998EC007F6F62 /* CustomClipView.h */,
@@ -193,23 +168,6 @@
 			children = (
 				B5F90AA01B3168B7008976E8 /* Info.plist */,
 				B5F90AA41B3168B7008976E8 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B5F90AB21B3168B7008976E8 /* MacOSBrushTests */ = {
-			isa = PBXGroup;
-			children = (
-				B5F90AB51B3168B7008976E8 /* MacOSBrushTests.m */,
-				B5F90AB31B3168B7008976E8 /* Supporting Files */,
-			);
-			path = MacOSBrushTests;
-			sourceTree = "<group>";
-		};
-		B5F90AB31B3168B7008976E8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				B5F90AB41B3168B7008976E8 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -234,39 +192,17 @@
 			productReference = B5F90A9C1B3168B7008976E8 /* MacOSBrush.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B5F90AAE1B3168B7008976E8 /* MacOSBrushTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B5F90ABC1B3168B7008976E8 /* Build configuration list for PBXNativeTarget "MacOSBrushTests" */;
-			buildPhases = (
-				B5F90AAB1B3168B7008976E8 /* Sources */,
-				B5F90AAC1B3168B7008976E8 /* Frameworks */,
-				B5F90AAD1B3168B7008976E8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B5F90AB11B3168B7008976E8 /* PBXTargetDependency */,
-			);
-			name = MacOSBrushTests;
-			productName = MacOSBrushTests;
-			productReference = B5F90AAF1B3168B7008976E8 /* MacOSBrushTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		B5F90A941B3168B7008976E8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = NSSimpleApps;
 				TargetAttributes = {
 					B5F90A9B1B3168B7008976E8 = {
 						CreatedOnToolsVersion = 6.3.2;
-					};
-					B5F90AAE1B3168B7008976E8 = {
-						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = B5F90A9B1B3168B7008976E8;
 					};
 				};
 			};
@@ -284,7 +220,6 @@
 			projectRoot = "";
 			targets = (
 				B5F90A9B1B3168B7008976E8 /* MacOSBrush */,
-				B5F90AAE1B3168B7008976E8 /* MacOSBrushTests */,
 			);
 		};
 /* End PBXProject section */
@@ -300,13 +235,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B5F90AAD1B3168B7008976E8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -314,46 +242,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5C10EC21B36FFA80073D3EE /* SelectionTool.m in Sources */,
+				B5C10EC21B36FFA80073D3EE /* SelectionImageView.m in Sources */,
 				B5C10ED11B37001D0073D3EE /* CurveTool.m in Sources */,
 				B5F90AA51B3168B7008976E8 /* main.m in Sources */,
 				B5C10ECE1B37000E0073D3EE /* LineTool.m in Sources */,
-				B5C10EBC1B36FF6E0073D3EE /* BrushTool.m in Sources */,
-				B5C10ECB1B36FFFE0073D3EE /* BombTool.m in Sources */,
+				B5C10EBC1B36FF6E0073D3EE /* BrushImageView.m in Sources */,
+				B5C10ECB1B36FFFE0073D3EE /* BombImageView.m in Sources */,
 				B5C10EDA1B3700670073D3EE /* RoundedRectangleTool.m in Sources */,
-				B5D944FD1B35642A00605BD9 /* PaintView.m in Sources */,
 				B5C10EE01B3701650073D3EE /* EyedropperTool.m in Sources */,
 				B5C10EDD1B37007D0073D3EE /* TextTool.m in Sources */,
-				B5C10EBF1B36FF900073D3EE /* EraserTool.m in Sources */,
+				B5C10EBF1B36FF900073D3EE /* EraserImageView.m in Sources */,
 				B5819DCE1B31B41B0031D4BB /* MainViewController.m in Sources */,
 				B5F90AA31B3168B7008976E8 /* AppDelegate.m in Sources */,
 				B5C10ED71B3700570073D3EE /* EllipseTool.m in Sources */,
+				B5ABA8B51BD53B99008B7F1F /* PaintView.m in Sources */,
 				B5C10EE31B3701720073D3EE /* ZoomTool.m in Sources */,
 				B54F06071B493A05007941CF /* NSBezierPath+CGPath.m in Sources */,
-				B5C10EC81B36FFED0073D3EE /* FillTool.m in Sources */,
+				B5C10EC81B36FFED0073D3EE /* FillImageView.m in Sources */,
 				B5DC5E551B4998EC007F6F62 /* CustomClipView.m in Sources */,
 				B5C10ED41B3700490073D3EE /* RectangleTool.m in Sources */,
-				B5C10EC51B36FFD70073D3EE /* AirbrushTool.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B5F90AAB1B3168B7008976E8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B5F90AB61B3168B7008976E8 /* MacOSBrushTests.m in Sources */,
+				B5C10EC51B36FFD70073D3EE /* AirbrushImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B5F90AB11B3168B7008976E8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B5F90A9B1B3168B7008976E8 /* MacOSBrush */;
-			targetProxy = B5F90AB01B3168B7008976E8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B5F90AA81B3168B7008976E8 /* MainMenu.xib */ = {
@@ -388,6 +300,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -403,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -440,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -453,6 +366,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MacOSBrush/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NSSimpleApps.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -464,43 +378,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MacOSBrush/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NSSimpleApps.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		B5F90ABD1B3168B7008976E8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MacOSBrushTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacOSBrush.app/Contents/MacOS/MacOSBrush";
-			};
-			name = Debug;
-		};
-		B5F90ABE1B3168B7008976E8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MacOSBrushTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacOSBrush.app/Contents/MacOS/MacOSBrush";
 			};
 			name = Release;
 		};
@@ -521,15 +400,6 @@
 			buildConfigurations = (
 				B5F90ABA1B3168B7008976E8 /* Debug */,
 				B5F90ABB1B3168B7008976E8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B5F90ABC1B3168B7008976E8 /* Build configuration list for PBXNativeTarget "MacOSBrushTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B5F90ABD1B3168B7008976E8 /* Debug */,
-				B5F90ABE1B3168B7008976E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,7 +7,6 @@
 //
 
 #import "CurveTool.h"
-#import <AppKit/NSImageView.h>
 
 @implementation CurveTool
 

@@ -6,9 +6,16 @@
 //  Copyright (c) 2015 NSSimpleApps. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "PaintProtocol.h"
+#import <Cocoa/Cocoa.h>
+/*#import "PaintProtocol.h"
 
 @interface EllipseTool : NSObject <PaintProtocol>
+
+@end
+*/
+
+@interface EllipseTool : NSImageView
+
+
 
 @end

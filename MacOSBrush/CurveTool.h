@@ -6,9 +6,8 @@
 //  Copyright (c) 2015 NSSimpleApps. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "PaintProtocol.h"
+#import <Cocoa/Cocoa.h>
 
-@interface CurveTool : NSObject <PaintProtocol>
+@interface CurveTool : NSImageView
 
 @end

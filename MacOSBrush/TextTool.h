@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PaintProtocol.h"
 
-@interface TextTool : NSObject <PaintProtocol>
+@interface TextTool : NSObject
 
 @end

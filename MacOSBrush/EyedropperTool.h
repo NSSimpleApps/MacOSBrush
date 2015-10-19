@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PaintProtocol.h"
 
-@interface EyedropperTool : NSObject <PaintProtocol>
+@interface EyedropperTool : NSObject
 
 @end

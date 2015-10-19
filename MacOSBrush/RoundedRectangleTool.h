@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PaintProtocol.h"
 
-@interface RoundedRectangleTool : NSObject <PaintProtocol>
+@interface RoundedRectangleTool : NSObject
 
 @end

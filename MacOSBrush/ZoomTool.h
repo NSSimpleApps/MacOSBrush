@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PaintProtocol.h"
 
-@interface ZoomTool : NSObject <PaintProtocol>
+@interface ZoomTool : NSObject
 
 @end

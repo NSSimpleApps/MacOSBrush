@@ -7,23 +7,16 @@
 //
 
 #import "EllipseTool.h"
-#import <AppKit/NSImageView.h>
+//#import <AppKit/NSImageView.h>
+
+@interface EllipseTool()
+
+@property (strong, nonatomic) NSBezierPath *bezierPath;
+
+@end
 
 @implementation EllipseTool
 
-- (void)drawingDidBeginAtPoint:(NSPoint)point inView:(NSImageView*)paintView {
-    
-    
-}
 
-- (void)drawingMovedToPoint:(NSPoint)point inView:(NSImageView*)paintView {
-    
-    
-}
-
-- (void)drawingDidEndAtPoint:(NSPoint)point inView:(NSImageView*)paintView {
-    
-    
-}
 
 @end

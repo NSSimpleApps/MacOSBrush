@@ -1,58 +1,43 @@
 //
-//  BombTool.m
+//  BombImageView.m
 //  MacOSBrush
 //
 //  Created by NSSimpleApps on 21.06.15.
 //  Copyright (c) 2015 NSSimpleApps. All rights reserved.
 //
 
-#import "BombTool.h"
-#import <AppKit/NSImageView.h>
-#import <AppKit/NSColor.h>
-#import <AppKit/NSCursor.h>
-#import <AppKit/NSImage.h>
-//#import <AppKit/NSBezierPath.h>
+#import "BombImageView.h"
+#import "NSBezierPath+CGPath.h"
 #import <QuartzCore/CAShapeLayer.h>
 #import <QuartzCore/CAAnimation.h>
 #import <QuartzCore/CAMediaTimingFunction.h>
-#import "NSBezierPath+CGPath.h"
 
-
-@interface BombTool ()
-
-@property (weak, nonatomic) NSImageView *imageView;
+@interface BombImageView ()
 
 @end
 
-@implementation BombTool
+@implementation BombImageView
 
-- (instancetype)init {
++ (NSCursor *)cursor {
     
-    self = [super init];
-    
-    if (self) {
-        
-        self.cursor = [[NSCursor alloc] initWithImage:[NSImage imageNamed:@"bomb-cursor"] hotSpot:NSMakePoint(8, 8)];
-        
-        self.color = [NSColor whiteColor];
-    }
-    return self;
+    return [[NSCursor alloc] initWithImage:[NSImage imageNamed:@"bomb-cursor"] hotSpot:NSMakePoint(8, 8)];
 }
 
-- (void)drawingDidBeginAtPoint:(NSPoint)point inView:(NSImageView*)paintView {
+- (void)mouseDown:(NSEvent *)theEvent {
     
-    self.imageView = paintView;
+    NSPoint locationInWindow = theEvent.locationInWindow;
+    NSPoint point = [self convertPoint:locationInWindow fromView:nil];
     
     CAShapeLayer *circularLayer = [CAShapeLayer layer];
     circularLayer.path = [self circularPathWithCenter:point radius:0];
     circularLayer.fillColor = [self.color CGColor];
     
-    [paintView.layer addSublayer:circularLayer];
+    [self.layer addSublayer:circularLayer];
     
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"path"];
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
     animation.values = @[(id)[self circularPathWithCenter:point radius:0],
-                         (id)[self circularPathWithCenter:point radius:[self maximumRadius:point rect:paintView.frame]]];
+                         (id)[self circularPathWithCenter:point radius:[self maximumRadius:point rect:self.frame]]];
     animation.duration = 0.4;
     animation.removedOnCompletion = NO;
     animation.fillMode = kCAFillModeForwards;
@@ -64,7 +49,6 @@
 
 - (CGPathRef)circularPathWithCenter:(NSPoint)center radius:(CGFloat)radius {
     
-    
     NSBezierPath *circularPath = [NSBezierPath bezierPathWithOvalInRect:NSMakeRect(center.x - radius, center.y - radius, 2*radius, 2*radius)];
     
     return [circularPath CGPath];
@@ -75,15 +59,15 @@
     CAShapeLayer *circularLayer = [anim valueForKey:@"circularLayer"];
     [circularLayer removeFromSuperlayer];
     
-    [self.imageView.image lockFocus];
+    [self.image lockFocus];
     [self.color setFill];
-    NSRectFill(NSMakeRect(0, 0, self.imageView.image.size.width, self.imageView.image.size.height));
-    [self.imageView.image unlockFocus];
+    NSRectFill(NSMakeRect(0, 0, self.image.size.width, self.image.size.height));
+    [self.image unlockFocus];
     
-    [self.imageView setNeedsDisplay];
+    [self setNeedsDisplay:YES];
 }
 
-- (CGFloat)maximumRadius:(CGPoint)touchLocation rect:(NSRect)rect {
+- (CGFloat)maximumRadius:(NSPoint)touchLocation rect:(NSRect)rect {
     
     CGFloat width = rect.size.width, height = rect.size.height;
     
@@ -96,15 +80,5 @@
     
     return MAX(MAX(R1, R2), MAX(R3, R4));
 }
-
-/*- (void)drawingMovedToPoint:(NSPoint)point inView:(NSImageView*)paintView {
-    
-    
-}
-
-- (void)drawingDidEndAtPoint:(NSPoint)point inView:(NSImageView*)paintView {
-    
-    
-}*/
 
 @end
