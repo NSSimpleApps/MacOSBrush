@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		B54F06071B493A05007941CF /* NSBezierPath+CGPath.m in Sources */ = {isa = PBXBuildFile; fileRef = B54F06061B493A05007941CF /* NSBezierPath+CGPath.m */; };
 		B5819DCE1B31B41B0031D4BB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5819DCD1B31B41B0031D4BB /* MainViewController.m */; };
-		B5ABA8B51BD53B99008B7F1F /* PaintView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ABA8B41BD53B99008B7F1F /* PaintView.m */; settings = {ASSET_TAGS = (); }; };
+		B5ABA8B51BD53B99008B7F1F /* PaintView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ABA8B41BD53B99008B7F1F /* PaintView.m */; };
 		B5C10EBC1B36FF6E0073D3EE /* BrushImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EBB1B36FF6E0073D3EE /* BrushImageView.m */; };
 		B5C10EBF1B36FF900073D3EE /* EraserImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EBE1B36FF900073D3EE /* EraserImageView.m */; };
 		B5C10EC21B36FFA80073D3EE /* SelectionImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EC11B36FFA80073D3EE /* SelectionImageView.m */; };
@@ -24,7 +24,6 @@
 		B5C10EDD1B37007D0073D3EE /* TextTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EDC1B37007D0073D3EE /* TextTool.m */; };
 		B5C10EE01B3701650073D3EE /* EyedropperTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EDF1B3701650073D3EE /* EyedropperTool.m */; };
 		B5C10EE31B3701720073D3EE /* ZoomTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C10EE21B3701720073D3EE /* ZoomTool.m */; };
-		B5D945001B35A3A600605BD9 /* screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D944FF1B35A3A600605BD9 /* screenshot.png */; };
 		B5DC5E551B4998EC007F6F62 /* CustomClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DC5E541B4998EC007F6F62 /* CustomClipView.m */; };
 		B5F90AA31B3168B7008976E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F90AA21B3168B7008976E8 /* AppDelegate.m */; };
 		B5F90AA51B3168B7008976E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F90AA41B3168B7008976E8 /* main.m */; };
@@ -207,7 +206,7 @@
 				};
 			};
 			buildConfigurationList = B5F90A971B3168B7008976E8 /* Build configuration list for PBXProject "MacOSBrush" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -230,7 +229,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5F90AA71B3168B7008976E8 /* Images.xcassets in Resources */,
-				B5D945001B35A3A600605BD9 /* screenshot.png in Resources */,
 				B5F90AAA1B3168B7008976E8 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
