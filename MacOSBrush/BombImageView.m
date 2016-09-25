@@ -12,7 +12,7 @@
 #import <QuartzCore/CAAnimation.h>
 #import <QuartzCore/CAMediaTimingFunction.h>
 
-@interface BombImageView ()
+@interface BombImageView () <CAAnimationDelegate>
 
 @end
 
